@@ -15,7 +15,6 @@
 package monitoredresource
 
 import (
-	"contrib.go.opencensus.io/exporter/stackdriver/monitoredresource/aws"
 	"contrib.go.opencensus.io/exporter/stackdriver/monitoredresource/gcp"
 )
 
@@ -96,6 +95,5 @@ type AWSEC2Instance struct {
 
 // MonitoredResource returns resource type and resource labels for AWSEC2Instance
 func (ec2 *AWSEC2Instance) MonitoredResource() (resType string, labels map[string]string) {
-	awsEC2 := aws.EC2Instance(*ec2)
-	return awsEC2.MonitoredResource()
+	return "", nil
 }

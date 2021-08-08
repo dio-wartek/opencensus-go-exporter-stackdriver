@@ -17,7 +17,6 @@ package monitoredresource
 import (
 	"sync"
 
-	"contrib.go.opencensus.io/exporter/stackdriver/monitoredresource/aws"
 	"contrib.go.opencensus.io/exporter/stackdriver/monitoredresource/gcp"
 )
 
@@ -48,10 +47,6 @@ func Autodetect() Interface {
 			var wg sync.WaitGroup
 			wg.Add(2)
 
-			go func() {
-				defer wg.Done()
-				awsDetect = aws.Autodetect()
-			}()
 			go func() {
 				defer wg.Done()
 				gcpDetect = gcp.Autodetect()
