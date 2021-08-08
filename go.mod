@@ -4,7 +4,6 @@ go 1.15
 
 require (
 	cloud.google.com/go v0.75.0
-	github.com/aws/aws-sdk-go v1.37.0
 	github.com/census-instrumentation/opencensus-proto v0.3.0
 	github.com/golang/protobuf v1.4.3
 	github.com/google/go-cmp v0.5.4
@@ -22,3 +21,5 @@ require (
 	google.golang.org/protobuf v1.25.0
 	honnef.co/go/tools v0.0.1-2020.1.4
 )
+
+replace contrib.go.opencensus.io/exporter/stackdriver => github.com/dio-wartek/opencensus-go-exporter-stackdriver v0.13.9-0.20210808052053-43b9da9cfe59
